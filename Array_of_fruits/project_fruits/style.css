@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container Styles */
+.containerFruits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 10px;
+    background-color: #af4c4c;
+}
+
+/* Fruit Card Styles */
+.fruitDetails {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1 1 calc(33.333% - 40px); /* Makes cards responsive */
+    background-color: #cbd811;
+
+}
+
+.fruitDetails h1 {
+    font-size: 1.5em;
+    color: #4CAF50;
+}
+
+.image_fruit {
+    width: 100%;
+    max-width: 200px;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px auto;
+}
+
+.fruitCategory, 
+.fruitdescription, 
+.timeToEat {
+    color: #555;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 10px 0;
+    padding-left: 20px;
+    text-align: left;
+}
+
+li {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.separator {
+    height: 2px;
+    background-color: red;
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .fruitDetails {
+        flex: 1 1 calc(50% - 20px); /* Adjust for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .fruitDetails {
+        flex: 1 1 calc(100% - 20px); /* Adjust for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .fruitDetails {
+        padding: 15px;
+    }
+
+    .image_fruit {
+        max-width: 150px;
+    }
+}
