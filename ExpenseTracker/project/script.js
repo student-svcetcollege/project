@@ -1,23 +1,23 @@
 let expenses = [];
 
-        function addExpense() {
-            const name = document.getElementById("expenseName").value;
-            const amount = parseFloat(document.getElementById("expenseAmount").value);
-            const date = document.getElementById("expenseDate").value;
-            console.log(name,amount,date);
+function addExpense() {
+    const name = document.getElementById("expenseName").value;
+    const amount = parseFloat(document.getElementById("expenseAmount").value);
+    const date = document.getElementById("expenseDate").value;
 
-            if (name && amount && date) {
-                const expense = { name, amount, date };
-                console.log(expense)
-                expenses.push(expense);
-                console.log(expenses)
-                updateExpenseTable();
-                updateTotal();
-                clearInputs();
-            } else {
-                alert("Please fill out all fields");
-            }
-        }
+    if (!name || isNaN(amount) || amount <= 0 || !date) {
+        alert("Please enter a valid expense name, a positive amount, and a date.");
+        return;
+    }
+  
+    const expense = { name, amount, date };
+    expenses.push(expense);
+    updateExpenseTable();
+    updateTotal();
+    clearInputs();
+}
+
+
 
         function deleteExpense(index) {
             expenses.splice(index, 1);
@@ -26,7 +26,7 @@ let expenses = [];
         }
 
         function updateExpenseTable() {
-            const expenseTableBody = document.getElementById("expenseTable").querySelector("tbody");
+            const expenseTableBody = document.getElementById("expenseTable").querySelector("tbody");  // in place of query select we can write getElementByTagName('tbody')[0];
             expenseTableBody.innerHTML = "";
 
             expenses.forEach((expense, index) => {
